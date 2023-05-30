@@ -59,7 +59,7 @@ add_logo("pics/logo.png")
 #Load livestock data 
 df = pd.read_excel("data/grains_processed.xlsx")
 
-st.session_state.initialize()
+#st.session_state.initialize()
 
 st.sidebar.header("Grains:")
 
@@ -83,7 +83,7 @@ st.write(df)
 st.write("---")
 
 # Calculate total sales per contract
-df_total_sales = df_selection.groupby("contract_type")["total_sales"].sum().reset_index()
+df_total_sales = df.groupby("contract_type")["total_sales"].sum().reset_index()
 # Create bar chart 
 chart = px.bar(df_total_sales, x="contract_type", y="total_sales", color="contract_type")
 chart.update_layout(title="Total Sales per Contract Type")
