@@ -8,3 +8,4 @@ Pillow
 surprise
 plotly
 plost
+openpyxl
